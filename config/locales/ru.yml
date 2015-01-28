@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    attributes:
+      company:
+        title: 'Заголовок'
+      employee:
+        first_name: 'Имя'
+        middle_name: 'Отчество'
+        last_name: 'Фамилия'
+    errors:
+      models:
+        company:
+          attributes:
+            title:
+              blank: 'не может быть пустым'
+        employee:
+          attributes:
+            first_name:
+              blank: 'не может быть пустым'
+            middle_name:
+              blank: 'не может быть пустым'
+            last_name:
+              blank: 'не может быть пустой'
+  app:
+    add_company: 'Добавить компанию'
+    forms:
+      save: 'Сохранить'

@@ -1,0 +1,32 @@
+<h1>Список компаний</h1>
+<ul>
+	<li><%= link_to I18n.t('app.add_company'), new_company_path %></li>
+</ul>
+<table>
+	<tbody>
+		<% @companies.each do |company| %>
+			<tr>
+				<td><%= company.title %></td>
+				<td></td>
+				<td>
+					<% if company.employees.empty? %>
+						Нет сотрудников
+					<% else %>
+						<%= company.employees.map { |person| 
+							"#{person.last_name} #{person.first_name} #{person.middle_name}"	
+							
+							}.join(', ')
+						%>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+	<thead>
+		<tr>
+			<th>Наименование компании</th>
+			<th>ФИО директора</th>
+			<th>Сотрудники</th>
+		</tr>
+	</thead>
+</table>
