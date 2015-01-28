@@ -7,7 +7,7 @@
 		<% @companies.each do |company| %>
 			<tr>
 				<td><%= company.title %></td>
-				<td></td>
+				<td><%= company.director.nil? ? 'нет директора' : company.director.full_name %></td>
 				<td>
 					<% if company.employees.empty? %>
 						Нет сотрудников

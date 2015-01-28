@@ -4,5 +4,11 @@ class Employee < ActiveRecord::Base
   validates :first_name, :middle_name, :last_name,
     presence: true 
   has_many :companies_employees
-  has_many :companies, through: :companies_employees, :dependent => :restrict_with_error
+  has_many :companies, through: :companies_employees, 
+    :dependent => :restrict_with_error
+  belongs_to :position
+
+  def full_name
+    "#{last_name} #{first_name} #{middle_name}" 
+  end
 end
