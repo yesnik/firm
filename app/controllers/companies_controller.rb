@@ -34,18 +34,10 @@ class CompaniesController < ApplicationController
   def destroy
     @company = Company.find(params[:id])
     if @company.destroy
-      p '============!!!!!!!!!!!!!!!!!!=================='
-      p @company.errors
+      flash[:success] = I18n.t('app.flash.delete_successful')
       redirect_to companies_path
     else
-      p '=============================='
-      p @company.errors.messages
-      
-      flash[:notice] = @company.errors.full_messages.first
-      
-      
-
-      #render 'index'
+      flash[:danger] = @company.errors.full_messages.first
       redirect_to companies_path
     end
   end

@@ -25,6 +25,8 @@ ru:
             last_name:
               blank: 'не может быть пустой'
   app:
+    flash:
+      delete_successful: 'Компания успешно удалена'
     menu:
       add_company: 'Добавить компанию'
       companies_list: 'Список компаний'

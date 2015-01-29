@@ -10,14 +10,10 @@
 <body>
 <div class="container">
 
-  
   <% flash.each do |name, msg| -%>
-    <div class="alert alert-danger" role="alert">
-      <%= content_tag :div, msg, class: name %>
-    </div>
+    <%= content_tag :div, msg, class: "alert alert-#{name}", role: 'alert' %>
   <% end -%>
   
-
   <ul class="nav nav-pills">
     <li class="<%= (current_page?(companies_path) or 
       current_page?('/')) ? 'active' : '' %>">
