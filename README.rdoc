@@ -17,8 +17,8 @@
 * Устанавливаем гемы
     $ bundle install
 
-* Создаем структуру базы данных
-    $ rake db:create db:schema:load
+* Создаем структуру БД и вставляем тестовые данные
+    $ rake db:create db:schema:load db:seed
 
 * Запускаем сервер разработки
     
