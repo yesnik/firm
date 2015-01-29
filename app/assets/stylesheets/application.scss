@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 #error_explanation {
   border: 1px solid #F9A2A2;
   background: #FFE3E3;
@@ -22,4 +27,8 @@
 
 .field_with_errors input {
   border: 2px solid red;
+}
+
+body {
+  margin-top: 30px;
 }

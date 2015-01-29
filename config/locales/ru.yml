@@ -11,6 +11,9 @@ ru:
       models:
         company:
           attributes:
+            base:
+              restrict_dependent_destroy:
+                many: 'Нельзя удалить компанию, в которой есть сотрудники'
             title:
               blank: 'не может быть пустым'
         employee:
@@ -22,6 +25,12 @@ ru:
             last_name:
               blank: 'не может быть пустой'
   app:
-    add_company: 'Добавить компанию'
+    menu:
+      add_company: 'Добавить компанию'
+      companies_list: 'Список компаний'
     forms:
+      are_you_sure: 'Вы уверены?'
+      delete: 'Удалить'
+      find_by_director_surname: 'Искать по фамилии директора'
       save: 'Сохранить'
+      search: 'Искать'

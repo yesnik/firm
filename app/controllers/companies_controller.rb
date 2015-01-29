@@ -1,6 +1,12 @@
 class CompaniesController < ApplicationController
   def index
-  	@companies = Company.all
+    if params[:director_surname]
+      @companies = Company.joins(:employees)
+        .where(employees: {last_name: params[:director_surname], 
+          position_id: Position::DIRECTOR_ID})
+    else
+  	 @companies = Company.all
+    end
   end
 
   def new
@@ -24,10 +30,29 @@ class CompaniesController < ApplicationController
 	    render 'new'
 	  end
 	end
+
+  def destroy
+    @company = Company.find(params[:id])
+    if @company.destroy
+      p '============!!!!!!!!!!!!!!!!!!=================='
+      p @company.errors
+      redirect_to companies_path
+    else
+      p '=============================='
+      p @company.errors.messages
+      
+      flash[:notice] = @company.errors.full_messages.first
+      
+      
+
+      #render 'index'
+      redirect_to companies_path
+    end
+  end
  
 private
   def company_params
-    params.require(:company).permit(:title)
+    params.require(:company).permit(:title, :director_surname)
   end
 
   def employee_params

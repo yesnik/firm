@@ -1,5 +1,7 @@
 class Company < ActiveRecord::Base
-  POSITION_DIRECTOR_ID = 2.freeze
+  
+  # Делаем параметр доступным для использования его в форме фильтра
+  attr_accessor :director_surname
 
 	validates :title, presence: true
 	# Если вам не нужно ничего делать с моделью отношений, проще настроить 
@@ -13,10 +15,10 @@ class Company < ActiveRecord::Base
   has_many :employees, through: :companies_employees, :dependent => :restrict_with_error
 
   def director
-  	self.employees.where(position_id: POSITION_DIRECTOR_ID).first || nil
+  	self.employees.where(position_id: Position::DIRECTOR_ID).first || nil
   end
 
   def workers
-  	self.employees.where.not(position_id: POSITION_DIRECTOR_ID)
+  	self.employees.where.not(position_id: Position::DIRECTOR_ID)
   end
 end
