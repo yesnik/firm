@@ -20,7 +20,7 @@ class CompaniesController < ApplicationController
 
   def create
 	  @company = Company.new(company_params)
-    @employee = Employee.new(employee_params)
+    @employee = @company.employees.build(employee_params)
     @employee.position_id = Position::DIRECTOR_ID
 
 	  if @company.valid? and @employee.valid?
