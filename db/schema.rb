@@ -39,14 +39,6 @@ ActiveRecord::Schema.define(version: 20150128070948) do
 
   add_index "employees", ["position_id"], name: "index_employees_on_position_id"
 
-  create_table "employees_roles", force: :cascade do |t|
-    t.integer "employee_id"
-    t.integer "role_id"
-  end
-
-  add_index "employees_roles", ["employee_id"], name: "index_employees_roles_on_employee_id"
-  add_index "employees_roles", ["role_id"], name: "index_employees_roles_on_role_id"
-
   create_table "positions", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
