@@ -15,17 +15,18 @@ Position.create([
 ])
 
 specialist_id = Position::SPECIALIST_ID
+director_id = Position::DIRECTOR_ID
 Employee.create([
   {first_name: 'Иван', middle_name: 'Владимирович', 
-    last_name: 'Дорин', position_id: specialist_id},
+      last_name: 'Дорин', position_id: specialist_id},
   {first_name: 'Ксения', middle_name: 'Ивановна', 
-    last_name: 'Рубцова', position_id: specialist_id},
+      last_name: 'Рубцова', position_id: specialist_id},
   {first_name: 'Даниил', middle_name: 'Александрович', 
-    last_name: 'Рыбаков', position_id: specialist_id},
+      last_name: 'Рыбаков', position_id: director_id},
   {first_name: 'Петр', middle_name: 'Алексеевич', 
-    last_name: 'Донцов', position_id: specialist_id},
+      last_name: 'Донцов', position_id: specialist_id},
   {first_name: 'Мария', middle_name: 'Алексеевна', 
-    last_name: 'Петрова', position_id: specialist_id},
+      last_name: 'Петрова', position_id: specialist_id},
 ])
 
 Company.create([
