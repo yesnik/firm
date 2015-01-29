@@ -1,28 +1,27 @@
-== README
+== Компании и сотрудники
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Это учебное приложение на Ruby on Rails 4, показывающее:
 
-Things you may want to cover:
+* реализацию связей один-ко-многим, многие-ко-многим
+* валидацию двух моделей при создании за один запрос компании и ее директора
+* использование гема "twitter-bootstrap-rails"
+* использование flash-сообщений
 
-* Ruby version
+== Установка
 
-* System dependencies
+* Клонируем репозиторий, переходим в папку проекта
+    
+    $ git clone git@github.com:yesnik/firm.git
+    $ cd firm
 
-* Configuration
+* Устанавливаем гемы
+    $ bundle install
 
-* Database creation
+* Создаем структуру базы данных
+    $ rake db:create db:schema:load
 
-* Database initialization
+* Запускаем сервер разработки
+    
+    $ rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Переходим в браузере: http://127.0.0.1:3000

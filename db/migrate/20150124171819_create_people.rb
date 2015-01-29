@@ -5,6 +5,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :middle_name
       t.string :last_name
       t.belongs_to :company, index: true
+      t.belongs_to :role, index: true
 
       t.timestamps null: false
     end
